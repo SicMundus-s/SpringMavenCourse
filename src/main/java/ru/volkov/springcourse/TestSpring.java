@@ -9,9 +9,14 @@ public class TestSpring {
 
         );
 
-        TestBean testBean = context.getBean("TestBean", TestBean.class);
+        Music music = context.getBean("musicBean", Music.class);
+        Music musicJas = context.getBean("musicBeanJas", Music.class);
 
-        System.out.println(testBean.getName());
+        MusicPlayer musicPlayer = new MusicPlayer(music);
+        MusicPlayer musicPlayerJas = new MusicPlayer(musicJas);
+
+        musicPlayer.playMusic();
+        musicPlayerJas.playMusic();
 
         context.close();
     }

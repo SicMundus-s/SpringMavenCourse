@@ -7,9 +7,11 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="TestBean"
-          class="ru.volkov.springcourse.TestBean">
-        <constructor-arg value="Nikita"/>
+    <bean id="musicBean"
+          class="ru.volkov.springcourse.ClassicalMusic">
+    </bean>
+    <bean id="musicBeanJas"
+          class="ru.volkov.springcourse.JasMusic">
     </bean>
 
 </beans>
