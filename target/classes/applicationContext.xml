@@ -10,8 +10,10 @@
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
-    <bean id="musicBeanClassic"
-          class="ru.volkov.springcourse.ClassicalMusic">
+    <bean id="musicBeanClassic" class="ru.volkov.springcourse.ClassicalMusic" scope="prototype"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy">
+
     </bean>
 
     <bean id="musicBeanJas"
@@ -22,7 +24,7 @@
           class="ru.volkov.springcourse.RockMusic">
     </bean>
 
-    <bean id="musicPlayer" class="ru.volkov.springcourse.MusicPlayer">
+    <bean id="musicPlayer" class="ru.volkov.springcourse.MusicPlayer" scope="prototype">
         <property name='musicList'>
             <list>
                 <ref bean="musicBeanClassic"/>
